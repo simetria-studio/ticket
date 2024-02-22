@@ -37,7 +37,7 @@
             float: left;
             margin: 4px !important;
             height: 64px !important;
-            width: 124px !important;
+            width: 134px !important;
             page-break-inside: avoid;
             margin-top: 25px !important;
 
