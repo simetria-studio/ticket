@@ -16,7 +16,7 @@
                         <input type="text" id="size" name="ultimo" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="barcodeType">Data:</label>
+                        <label for="barcodeType">Data de validade:</label>
                         <input type="date" id="size" name="data" class="form-control">
                     </div>
                 </div>

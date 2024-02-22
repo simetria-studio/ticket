@@ -25,9 +25,10 @@ class TicketController extends Controller
         $ultimo = $dados['ultimo'];
         $sufixo = $dados['sufixo'];
         $prefixo = $dados['prefixo'];
+        $data = $dados['data'];
 
         // Gera os números sequenciais com sufixo e prefixo
-        $codigos = $this->gerarNumerosSequenciais($primeiro, $ultimo, $sufixo, $prefixo);
+        $codigos = $this->gerarNumerosSequenciais($primeiro, $ultimo, $sufixo, $prefixo, 3);
 
         // Gera as imagens dos códigos de barras
         $imagens = [];
@@ -38,38 +39,29 @@ class TicketController extends Controller
         // Cria uma nova instância do Dompdf
         $pdf = new Dompdf();
 
-        // Renderiza a view 'pdf' com os dados dos códigos de barras
-        $html = view('pdf', ['imagens' => $imagens])->render();
+
+        $html = view('pdf', get_defined_vars())->render();
 
 
-        return view('code', ['imagens' => $imagens] );
+        return view('code', get_defined_vars());
 
-        // return $html;
 
-        // // Carrega o HTML gerado no Dompdf
-        // $pdf->loadHtml($html);
-
-        // // Define o tamanho e a orientação do papel
-        // $pdf->setPaper('A4', 'portrait');
-
-        // // Renderiza o PDF
-        // $pdf->render();
-
-        // // Retorna a resposta HTTP com o conteúdo do PDF
-        // return $pdf->stream('codigos_de_barras.pdf');
     }
 
 
-    public function gerarNumerosSequenciais($primeiro, $ultimo, $sufixo, $prefixo)
+    public function gerarNumerosSequenciais($primeiro, $ultimo, $sufixo, $prefixo, $repeticoes)
     {
         $numeros = [];
-
+    
         // Itera de $primeiro até $ultimo
         for ($i = $primeiro; $i <= $ultimo; $i++) {
-            // Adiciona o prefixo, o número e o sufixo ao array
-            $numeros[] = $prefixo . $i . $sufixo;
+            // Repete o número conforme especificado
+            for ($j = 0; $j < $repeticoes; $j++) {
+                // Adiciona o prefixo, o número e o sufixo ao array
+                $numeros[] = $prefixo . $i . $sufixo;
+            }
         }
-
+    
         return $numeros;
     }
 }

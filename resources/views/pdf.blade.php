@@ -37,9 +37,14 @@
             float: left;
             margin: 4px !important;
             height: 64px !important;
-            width: 124px !important;
+            width: 144px !important;
             page-break-inside: avoid;
+            margin-top: 25px !important;
 
+        }
+        .data{
+            text-align: center;
+            font-size: 12px;
         }
 
         img {
@@ -50,8 +55,9 @@
 
     <page size="A4">
         <div class="container">
-            @foreach ($imagens as $imagem)
+            @foreach ($imagens as $key => $imagem)
                 <div class="col-4">
+                    <p class="data">Data: {{ date('d/m/Y', strtotime($data)) }}</p>
                     <img src="data:image/svg+xml;base64,{{ base64_encode($imagem) }}" alt="Código de Barras">
                 </div>
             @endforeach

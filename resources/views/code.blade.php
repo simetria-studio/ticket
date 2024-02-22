@@ -6,8 +6,9 @@
         <button type="button" class="btn btn-primary" id="imprimir">IMPRIMIR</button>
     </div>
     <div class="row">
-        @foreach ($imagens as $imagem)
+        @foreach ($imagens as $key => $imagem)
             <div class="col-4 my-2">
+                <p>Data: {{ date('d/m/Y', strtotime($data)) }}</p>
                 <img src="data:image/svg+xml;base64,{{ base64_encode($imagem) }}" alt="Código de Barras">
             </div>
         @endforeach
