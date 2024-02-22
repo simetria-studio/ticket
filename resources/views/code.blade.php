@@ -8,7 +8,7 @@
     <div class="row">
         @foreach ($imagens as $key => $imagem)
             <div class="col-4 my-2">
-                <p>Data: {{ date('d/m/Y', strtotime($data)) }}</p>
+                <p>Validade: {{ date('d/m/Y', strtotime($data)) }}</p>
                 <img src="data:image/svg+xml;base64,{{ base64_encode($imagem) }}" alt="Código de Barras">
             </div>
         @endforeach

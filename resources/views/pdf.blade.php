@@ -44,7 +44,7 @@
         }
         .data{
             text-align: center;
-            font-size: 12px;
+            font-size: 10px;
         }
 
         img {
@@ -57,7 +57,7 @@
         <div class="container">
             @foreach ($imagens as $key => $imagem)
                 <div class="col-4">
-                    <p class="data">Data: {{ date('d/m/Y', strtotime($data)) }}</p>
+                    <p class="data">Validade: {{ date('d/m/Y', strtotime($data)) }}</p>
                     <img src="data:image/svg+xml;base64,{{ base64_encode($imagem) }}" alt="Código de Barras">
                 </div>
             @endforeach
