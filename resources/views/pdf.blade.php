@@ -23,7 +23,7 @@
         }
 
         page[size="A4"] {
-            width: 10.7cm;
+            width: 12cm;
 
         }
 
@@ -37,7 +37,7 @@
             float: left;
             margin: 4px !important;
             height: 64px !important;
-            width: 144px !important;
+            width: 124px !important;
             page-break-inside: avoid;
             margin-top: 25px !important;
 
