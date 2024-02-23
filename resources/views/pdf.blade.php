@@ -24,7 +24,7 @@
         }
 
         page[size="A4"] {
-            width: 12cm;
+            width: 14cm;
        
         }
 
@@ -38,7 +38,7 @@
             /* Largura de 33mm */
             height: 17mm;
             /* Altura de 17mm */
-            margin: 3mm;
+            margin: 3mm 5mm !important;
             /* Espaçamento de 3mm em todos os lados */
             float: left;
             page-break-inside: avoid;
