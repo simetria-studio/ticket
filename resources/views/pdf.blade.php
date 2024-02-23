@@ -20,11 +20,12 @@
             margin: 0 auto;
             margin-bottom: 0.5cm;
             box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+
         }
 
         page[size="A4"] {
             width: 12cm;
-
+       
         }
 
 
@@ -33,16 +34,19 @@
         }
 
         .col-4 {
-            width: calc(33.33% - 20px);
+            width: 33mm;
+            /* Largura de 33mm */
+            height: 17mm;
+            /* Altura de 17mm */
+            margin: 3mm;
+            /* Espaçamento de 3mm em todos os lados */
             float: left;
-            margin: 4px !important;
-            height: 64px !important;
-            width: 134px !important;
             page-break-inside: avoid;
-            margin-top: 25px !important;
-
+            margin-top: 3mm !important;
+            /* Ajuste o espaçamento superior se necessário */
         }
-        .data{
+
+        .data {
             text-align: center;
             font-size: 10px;
         }
